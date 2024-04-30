@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Designer Portfolio</title>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #666;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .portfolio-item {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .portfolio-item-content {
+            padding: 15px;
+        }
+        .portfolio-item h3 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .portfolio-item p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Color Mode */
+        .dark-mode body {
+            background-color: #333;
+            color: #fff;
+        }
+        .dark-mode header,
+        .dark-mode nav {
+            background-color: #666;
+        }
+        .dark-mode .portfolio-item {
+            background-color: #444;
+            color: #fff;
+        }
+        .dark-mode .portfolio-item:hover {
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+        /* Language Selector */
+        .language-selector {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .language-selector button {
+            cursor: pointer;
+            padding: 5px 10px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #666;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Graphic Designer Portfolio</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="container">
+        <!-- Language Selector -->
+        <div class="language-selector">
+            <button onclick="setLanguage('en')">English</button>
+            <button onclick="setLanguage('es')">Spanish</button>
+        </div>
+        <h2 id="portfolio-header">Portfolio</h2>
+        <div class="portfolio">
+            <div class="portfolio-item">
+                <img src="placeholder.jpg" alt="Project 1">
+                <div class="portfolio-item-content">
+                    <h3 id="project1">Project 1</h3>
+                    <p id="project1-desc">Description of Project 1</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="placeholder.jpg" alt="Project 2">
+                <div class="portfolio-item-content">
+                    <h3 id="project2">Project 2</h3>
+                    <p id="project2-desc">Description of Project 2</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="placeholder.jpg" alt="Project 3">
+                <div class="portfolio-item-content">
+                    <h3 id="project3">Project 3</h3>
+                    <p id="project3-desc">Description of Project 3</p>
+                </div>
+            </div>
+            <!-- Add more portfolio items as needed -->
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Graphic Designer Portfolio</p>
+    </footer>
+
+    <!-- Script for language selection -->
+    <script>
+        function setLanguage(lang) {
+            if (lang === 'es') {
+                document.getElementById('portfolio-header').textContent = 'Portafolio';
+                document.getElementById('project1').textContent = 'Proyecto 1';
+                document.getElementById('project1-desc').textContent = 'Descripción del Proyecto 1';
+                document.getElementById('project2').textContent = 'Proyecto 2';
+                document.getElementById('project2-desc').textContent = 'Descripción del Proyecto 2';
+                document.getElementById('project3').textContent = 'Proyecto 3';
+                document.getElementById('project3-desc').textContent = 'Descripción del Proyecto 3';
+            } else {
+                document.getElementById('portfolio-header').textContent = 'Portfolio';
+                document.getElementById('project1').textContent = 'Project 1';
+                document.getElementById('project1-desc').textContent = 'Description of Project 1';
+                document.getElementById('project2').textContent = 'Project 2';
+                document.getElementById('project2-desc').textContent = 'Description of Project 2';
+                document.getElementById('project3').textContent = 'Project 3';
+                document.getElementById('project3-desc').textContent = 'Description of Project 3';
+            }
+        }
+    </script>
+</body>
+</html>
