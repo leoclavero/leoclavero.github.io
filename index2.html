@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Your existing meta tags, title, and stylesheets -->
+    <!-- Add a script tag for JavaScript -->
+    <script>
+      // Function to toggle between English and Spanish
+      function toggleLanguage() {
+        var elements = document.querySelectorAll('[data-translation]');
+        elements.forEach(function(element) {
+          var translations = JSON.parse(element.dataset.translation);
+          element.textContent = translations[element.textContent.trim()];
+        });
+      }
+    </script>
+  </head>
+  <body>
+
+    <!-- Your existing HTML content -->
+
+    <!-- Add a button for language toggle -->
+    <button onclick="toggleLanguage()">Toggle Language</button>
+
+    <!-- Add data-translation attribute to elements needing translation -->
+    <p data-translation='{"Welcome to my portfolio!": "¡Bienvenido a mi portafolio!"}'>Welcome to my portfolio!</p>
+    <h1 data-translation='{"Hey, I\'m": "Hola, soy", "Rosarito": "Rosarito", "Graphic Designer": "Diseñadora Gráfica", "UI Specialist": "Especialista en UI"}'>Hey, I'm Rosarito Graphic Designer UI Specialist</h1>
+
+    <!-- Your existing HTML content -->
+  </body>
+</html>
